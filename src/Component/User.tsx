@@ -1,19 +1,23 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
+import UserModel from '../Types/models';
+
+// interface Props{
+//     name: string, 
+//     age: number,
+//     addUser: () => void
+// }
 
 interface Props {
-  name: string,
-  age: number,
-  addUser: () => void 
+    user: UserModel,
+    addUser: (user: UserModel) => void
 }
-
-const User: FC<Props> = ({ name, age, addUser }) => {
-  return (
-    <div>
-      <h1>Hello from: {name}</h1>
-      <h1>Age: {age}</h1>
-      <button onClick={addUser}>Add me</button>
-    </div>
-  );
+const User: FC<Props> = ({ user, addUser }) => {
+    return (
+        <div>
+            <h2>Hello from : {user.name} with experience {user.email}</h2>
+            <button onClick={() => addUser(user)}>add me</button>
+        </div>
+    );
 };
 
 export default User;

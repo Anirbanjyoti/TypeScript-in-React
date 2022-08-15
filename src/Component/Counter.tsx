@@ -1,37 +1,39 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 
-interface User {
+interface User{
     name?: string,
     job?: string
 }
 
 const Counter = () => {
-  // Explicitly means you have been define the value
-  const [counter, setCounter] = useState(0);
-  // Implicitly
-  const [user, setUser] = useState<User | null>(null);
+    const [counter, setCount] = useState<number>(0);
+    const [user, setUser] = useState<User | null>(null);
 
-  const handleIncrease = (): void => {
-    setCounter(counter + 1);
-  };
-  const handleUserSubmit = (e: FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    const userData = {
-      name: "Anirban",
-      job: "web developer",
-    };
-    setUser(userData);
-  };
+    const handleIncrease = (): void =>{
+        setCount(counter + 1)
+    }
 
-  const handleChange = (e: ChangeEvent<HTMLFormElement>): void => {
-  }
-  return (
-    <div>
-      <h1>This is counter</h1>
-      <h2>{counter}</h2>
-      <button onClick={handleIncrease}>Increase</button>
-    </div>
-  );
+    const handleUserSubmit = (e: FormEvent<HTMLFormElement>) =>{
+        e.preventDefault();
+
+        const userData = {
+            name: 'Adan',
+            job: 'Dev'
+        }
+        setUser(userData)
+    }
+
+    const handleNameChange = (e: ChangeEvent<HTMLInputElement>): void =>{
+
+    }
+
+    return (
+        <div>
+            <h1>This is Counter</h1>
+            <h2>{counter}</h2>
+            <button onClick={handleIncrease}>Increase</button>
+        </div>
+    );
 };
 
 export default Counter;
