@@ -24,6 +24,14 @@ function App() {
     location: 55
   };
 
+  const handleAddUser = (fname:string, age:number, bg:string):void => {
+    const total:number =50;
+    console.log(fname, age, bg);
+    // return age;
+  }
+
+
+
   return <div className="App"></div>;
 }
 
