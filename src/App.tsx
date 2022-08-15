@@ -9,7 +9,22 @@ function App() {
 
   let fruits: string[] = ["55", "66", "56"];
 
-    return <div className="App"></div>;
+  interface Car{
+    color: string;
+    // optional ? 
+    CC?: number;
+    Milage: number;
+    // Union 
+    location? : string | number
+  }
+
+  const car:Car = {
+    color: "white",
+    Milage: 18,
+    location: 55
+  };
+
+  return <div className="App"></div>;
 }
 
 export default App;
