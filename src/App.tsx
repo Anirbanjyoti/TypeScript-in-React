@@ -1,6 +1,7 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Counter from './Component/Counter';
 
 function App() {
   let name: string = "Anirban";
@@ -29,10 +30,11 @@ function App() {
     console.log(fname, age, bg);
     return age;
   }
-
-
-
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Counter></Counter>
+    </div>
+  );
 }
 
 export default App;
