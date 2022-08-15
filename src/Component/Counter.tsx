@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 
 interface User {
     name?: string,
@@ -14,7 +14,7 @@ const Counter = () => {
   const handleIncrease = (): void => {
     setCounter(counter + 1);
   };
-  const handleUserSubmit = (e): void => {
+  const handleUserSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const userData = {
       name: "Anirban",
@@ -22,6 +22,9 @@ const Counter = () => {
     };
     setUser(userData);
   };
+
+  const handleChange = (e: ChangeEvent<HTMLFormElement>): void => {
+  }
   return (
     <div>
       <h1>This is counter</h1>
